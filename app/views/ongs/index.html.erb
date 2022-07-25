@@ -41,10 +41,10 @@
       <td><%= ongs.email %></td>
       <td><%= ongs.estado %></td>
       <td><%= 
-        if ongs.logo != nil 
+        if ongs.logo != '' 
           image_tag ongs.logo, size: "60x65" 
         else 
-          'Não informado' 
+          'Não informado.' 
         end 
       %></td>
 
