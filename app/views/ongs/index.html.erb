@@ -1,7 +1,7 @@
 <%= form_tag ongs_path, method: 'get' do%>
   <div class="row">
     <div class="form-group col-sm-2">
-      <%= label_tag :nome %>
+      <%= label_tag  'Pesquisar ong:' %>
       <%= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"),include_blank: 'Selecione' %>
     </div>
   </div>
