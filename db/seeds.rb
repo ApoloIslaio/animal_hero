@@ -7,5 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+State.create!(
+  description: 'Ceará',
+  initials: 'Ce'
+)
+State.create!(
+  description: 'Rio Grande Do Sul',
+  initials: 'RS'
+)
+State.create!(
+  description: 'Bahia',
+  initials: 'Ba'
+)
+
 
 
