@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :states
   resources :ongs
   resources :users, only: [:new, :create, :show]
   get 'home/index'
