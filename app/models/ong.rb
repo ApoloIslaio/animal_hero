@@ -1,4 +1,9 @@
 class Ong < ApplicationRecord
+  belongs_to :state
+
+
+
+
   validates :nome, presence: true, length: { maximum: 50 }
 
   before_save :email_downcase
