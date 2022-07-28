@@ -7,6 +7,7 @@ namespace :dev do
       show_spinner("Migrando BD...") { %x(rails db:migrate) }
       %x(rails dev:add_states)
       %x(rails dev:add_ongs) 
+      %x(rails dev:add_clinics)
     else 
       puts 'Você não está em ambiente de desenvolvimento'
     end
@@ -75,6 +76,22 @@ namespace :dev do
       ]
       states.each do |state|
         State.find_or_create_by!(state)
+      end
+    end
+  end
+  desc "Cadastrando estados"
+  task add_clinics: :environment do
+    show_spinner("Cadastrando Clinicas verterinarias") do
+      clinics = [
+        {
+          description: 'pet1',
+          email: 'pet1@gmail.com',
+          logo: 'https://www.petz.com.br/blog/wp-content/uploads/2021/02/raca-de-cachorro-grande-2-1280x720.jpg',
+          state: State.all.sample 
+        },
+      ]
+      clinics.each do |clinic|
+        Clinic.find_or_create_by!(clinic)
       end
     end
   end

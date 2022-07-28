@@ -3,8 +3,6 @@
     <div class="form-group col-sm-2">
       <%= label_tag  'Pesquisar ong:' %>
       <%= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"), include_blank: 'Selecione' %>
-     
-
     </div>
   </div>
 
@@ -15,15 +13,17 @@
       <%end %>
     </div>
   </div>
+
 <%end %>
+
 <%- model_class = Ong -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
-    <%= link_to 'Cadastrar nova ong',
-                new_ong_path,
+    <%= link_to 'Cadastrar nova ong', new_ong_path,
                 :class => 'btn btn-primary' %>
   </h1>
 </div>
+
 <table class="table table-striped">
   <thead>
   <tr>

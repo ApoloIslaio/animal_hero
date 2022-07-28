@@ -1,0 +1,35 @@
+<%= form_with(model: clinic, local: true) do |form| %>
+  <% if clinic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clinic.errors.count, "") %> Erro(s) achado(s)</h2>
+      <ul>
+      <% clinic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="form-group">
+    <%= form.label :estado %>
+    <%= form.select("state_id", @states_options02, {include_blank: 'Selecione'}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :logo %>
+    <%= form.text_field :logo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
