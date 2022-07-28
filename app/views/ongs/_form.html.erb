@@ -20,14 +20,9 @@
     <%= form.label :email %>
     <%= form.text_field :email, class: 'form-control' %>
   </div>
-
-  <div class="form-group">
-    <%= form.label :estado %>
-    <%= form.text_field :estado, class: 'form-control' %>
-  </div>
   
   <div class="form-group">
-    <%= form.label :estado %>
+    <%= form.label 'Estado' %>
     <%= form.select("state_id", @states_options, {include_blank: 'Selecione'}) %>
   </div>
 

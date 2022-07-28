@@ -19,7 +19,7 @@
 <%- model_class = Ong -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
-    <%= link_to t('.new', :default => t("helpers.links.new")),
+    <%= link_to 'Cadastrar nova ong',
                 new_ong_path,
                 :class => 'btn btn-primary' %>
   </h1>
@@ -30,7 +30,7 @@
     <th><%= model_class.human_attribute_name(:id) %></th>
     <th><%= model_class.human_attribute_name(:nome) %></th>
     <th><%= model_class.human_attribute_name(:email) %></th>
-    <th><%= model_class.human_attribute_name(:estado) %></th>
+    <th><%= model_class.human_attribute_name('Estado') %></th>
     <th><%= model_class.human_attribute_name(:logo) %></th>
     <th style="width: 170px" ><%=t '.actions', :default => t("helpers.actions") %></th>
   </tr>

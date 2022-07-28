@@ -19,7 +19,6 @@ namespace :dev do
         {
           nome: 'MundoPet',
           email: 'mundopet@gmail.com',
-          estado: 'Ceará',
           logo: 'https://img.freepik.com/fotos-gratis/o-gato-vermelho-ou-branco-eu-no-estudio-branco_155003-13189.jpg?w=2000',
           state: State.find_by(initials: 'CE')
           
@@ -27,14 +26,12 @@ namespace :dev do
         {
           nome: 'AnimalWorld',
           email: 'animalworld@gmail.com',
-          estado: 'Bahia',
           logo: 'https://www.petz.com.br/blog/wp-content/uploads/2021/02/raca-de-cachorro-grande-2-1280x720.jpg',
           state: State.all.sample
         },
         {
           nome: 'PetVida',
           email: 'petvida@gmail.com',
-          estado: 'Rio Grande do Norte',
           logo: 'https://www.petz.com.br/blog/wp-content/uploads/2021/02/raca-de-cachorro-grande-2-1280x720.jpg',
           state: State.all.sample
         }
@@ -81,6 +78,18 @@ namespace :dev do
       end
     end
   end
+
+  # desc "Cadastrando usuários"
+  #task add_users: :environment do
+    #show_spinner("Cadastrando usuários") do
+      #users = [
+        #{name: 'Mariano', email: 'nmariano85@gmail.com', password_digest: '12345678'},
+     # ]
+     # users.each do |user|  
+        #User.find_or_create_by!(user)
+      #end
+    #end
+  #end
 
   private
 
