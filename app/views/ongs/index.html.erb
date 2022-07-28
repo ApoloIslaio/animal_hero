@@ -2,7 +2,9 @@
   <div class="row">
     <div class="form-group col-sm-2">
       <%= label_tag  'Pesquisar ong:' %>
-      <%= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"),include_blank: 'Selecione' %>
+      <%= select_tag :id, options_from_collection_for_select(Ong.all.order(:nome),"id","nome"), include_blank: 'Selecione' %>
+     
+
     </div>
   </div>
 
@@ -39,7 +41,7 @@
       <td><%= link_to ongs.id, ong_path(ongs) %></td>
       <td><%= ongs.nome %></td>
       <td><%= ongs.email %></td>
-      <td><%= ongs.estado %></td>
+      <td><%= ongs.state.description %></td> 
       <td><%= 
         if ongs.logo != '' 
           image_tag ongs.logo, size: "60x65" 

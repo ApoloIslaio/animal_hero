@@ -49,7 +49,7 @@ namespace :dev do
   task add_states: :environment do
     show_spinner("Cadastrando estados") do
       states = [
-        {description: 'Ceará',initials: 'CE'},
+        {description: 'Ceará', initials: 'CE'},
         {description: 'Amapá', initials: 'AM'},
         {description: 'Bahia', initials: 'BA'},
         {description: 'Rio Grande Do Sul', initials: 'RS'},

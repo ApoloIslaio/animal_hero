@@ -1,5 +1,7 @@
 class OngsController < ApplicationController
   before_action :set_ong, only: [:show, :edit, :update, :destroy]
+  before_action :set_states_options, only: [:new, :create, :show, :edit, :update]
+
 
   # GET /ongs
   # GET /ongs.json
@@ -19,10 +21,12 @@ class OngsController < ApplicationController
   # GET /ongs/new
   def new
     @ong = Ong.new
+    show_states
   end
 
   # GET /ongs/1/edit
   def edit
+    show_states
   end
 
   # POST /ongs
@@ -65,7 +69,16 @@ class OngsController < ApplicationController
     end
   end
 
+  def show_states
+    show_states_for_selected = State.all
+  end
+
   private
+    def set_states_options
+      @states_options = State.all.pluck(:description, :id)
+    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_ong
       @ong = Ong.find(params[:id])
@@ -73,6 +86,6 @@ class OngsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ong_params
-      params.require(:ong).permit(:nome, :email, :estado, :logo)
+      params.require(:ong).permit(:nome, :email, :estado, :logo, :state_id)
     end
 end

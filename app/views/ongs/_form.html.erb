@@ -25,6 +25,12 @@
     <%= form.label :estado %>
     <%= form.text_field :estado, class: 'form-control' %>
   </div>
+  
+  <div class="form-group">
+    <%= form.label :estado %>
+    <%= form.select("state_id", @states_options, {include_blank: 'Selecione'}) %>
+  </div>
+
 
   <div class="form-group">
     <%= form.label :logo %>
@@ -32,6 +38,6 @@
   </div>
 
   <div class="actions form-group">
-    <%= form.submit 'Criar ong', class: 'btn btn-success' %>
+    <%= form.submit 'Finalizar', class: 'btn btn-success' %>
   </div>
 <% end %>
