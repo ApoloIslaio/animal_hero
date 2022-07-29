@@ -1,14 +1,14 @@
 <%= form_tag clinics_path, method: 'get' do%>
 <div class="row">
     <div class="form-group col-sm-2">
-      <%= label_tag  'Pesquisar clinica:' %>
-      <%= select_tag :id, options_from_collection_for_select(Clinic.all.order(:description),"id","description"), include_blank: 'Selecione' %>
+      <%= label_tag  'Pesquisar clínica:' %>
+      <%= select_tag :id, options_from_collection_for_select(Clinic.all.order(:id),"id","description"), include_blank: 'Selecione' %>
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-sm-3">
-      <%=button_tag(value: "commit",type:'submit',class: "btn btn-success") do %>
+      <%= button_tag(value: "commit", type:'submit', class: "btn btn-success") do %>
         Pesquisar
       <%end %>
     </div>
@@ -17,11 +17,10 @@
 <%end %>
 
 <p id="notice"><%= notice %></p>
-
-<%- model_class = Clinic -%>
+<%- model_class = Ong -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
-    <%= link_to 'Cadastrar nova clinica veterinaria', new_clinic_path,
+  <h1>Clínicas <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+    <%= link_to 'Cadastrar clinica veterinaria', new_clinic_path,
                 :class => 'btn btn-primary' %>
   </h1>
 </div>
@@ -29,10 +28,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Email</th>
-      <th>Estado</th>
-      <th>Logo</th>
+      <th><%= model_class.human_attribute_name(:id) %> </th>
+      <th><%= model_class.human_attribute_name('Nome') %> </th>
+      <th><%= model_class.human_attribute_name('Email') %> </th>
+      <th><%= model_class.human_attribute_name('Estado') %> </th>
+      <th><%= model_class.human_attribute_name('Logo') %> </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -40,6 +40,7 @@
   <tbody>
     <% @clinics.each do |clinic| %>
       <tr>
+        <td><%= link_to clinic.id, clinic_path(clinic) %></td>
         <td><%= clinic.description %></td>
         <td><%= clinic.email %></td>
         <td><%= clinic.state.description %></td>

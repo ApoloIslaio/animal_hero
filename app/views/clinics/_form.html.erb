@@ -10,26 +10,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control'%>
   </div>
   <div class="form-group">
     <%= form.label :estado %>
     <%= form.select("state_id", @states_options02, {include_blank: 'Selecione'}) %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :logo %>
-    <%= form.text_field :logo %>
+    <%= form.text_field :logo, class: 'form-control'%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit  'Finalizar', class: 'btn btn-success'%>
   </div>
 <% end %>

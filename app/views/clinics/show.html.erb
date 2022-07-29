@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
+  <strong> Nome  </strong>
   <%= @clinic.description %>
 </p>
 
@@ -12,8 +12,12 @@
 
 <p>
   <strong>Logo:</strong>
-  <%= @clinic.logo %>
+  <%=  renderImg(@clinic.logo) %>
+</p>
+<p>
+  <strong> Estado  </strong>
+  <%= @clinic.state.description %>
 </p>
 
-<%= link_to 'Edit', edit_clinic_path(@clinic) %> |
-<%= link_to 'Back', clinics_path %>
+<%= link_to 'Editar', edit_clinic_path(@clinic) %> |
+<%= link_to 'Voltar', clinics_path %>
